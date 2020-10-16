@@ -15,6 +15,7 @@ body {
 }
 
 #userRegistration {
+  display: none;
   width: 60%;
   height: 80%;
 }
@@ -110,4 +111,84 @@ body {
 
 #formBtn button:hover {
   border: 2px solid #307bb4;
+}
+
+#question-page {
+  width: 60%;
+  height: 80%;
+}
+
+#welcome-stats {
+  background-color: #EEEbE3;
+  border: 1px solid #707070;
+  border-radius: 15px;
+  padding: 20px 15px;
+  display: flex;
+}
+#welcome-msg {
+padding-left: 10px;
+}
+
+#stats {
+  flex: 1;
+  text-align: right;
+  padding-right: 10px;
+}
+
+#stats span:nth-child(2) {
+  margin: 0 20px;
+}
+
+#question-area {
+  background-color: #EEEbE3;
+  border: 1px solid #707070;
+  border-radius: 15px;
+  padding: 15px 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 420px;
+}
+
+#question-area h3 {
+  align-self: flex-start;
+}
+
+#question-box {
+  width: 70%;
+  height: 150px;
+  border: 1px solid #000;
+}
+
+#ans-buttons {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(2,49%);
+  gap: 10px;
+}
+
+#ans-buttons > button {
+  padding: 10px 5px;
+  color: #fff;;
+  background-color: #1e90ff;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 3px 5px rgba(0,0,0,0.7);
+}
+
+#next-q {
+  align-self: flex-end;
+  margin-right: calc(100% - 87%);
+  padding: 10px 40px;
+  color: #fff;
+  text-shadow: 0 3px 5px rgba(0,0,0,0.7);
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background-color: #949595;
+  margin-top: 10px;
 }
