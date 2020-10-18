@@ -15,7 +15,7 @@ body {
 }
 
 #userRegistration {
-  display: none;
+  display: block;
   width: 60%;
   height: 80%;
 }
@@ -107,15 +107,17 @@ body {
   padding: 10px 0;
   border: none;
   height: 40px;
+  transition: background-color 0.2s;
 }
 
 #formBtn button:hover {
-  border: 2px solid #307bb4;
+  background-color: #307bb4;
 }
 
 #question-page {
-  width: 60%;
+  width: 55%;
   height: 80%;
+  display: none;
 }
 
 #welcome-stats {
