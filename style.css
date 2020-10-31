@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   margin-top: 200px;
@@ -22,11 +22,11 @@ body {
 
 #userRegistration h1 {
   padding: 30px;
-  font-size:3rem;
+  font-size: 3rem;
 }
 
 #form {
-  background-color: #EEEbE3;
+  background-color: #eeebe3;
   border: 1px solid #707070;
   border-radius: 30px;
   display: flex;
@@ -50,10 +50,10 @@ body {
 
 #formInputs1 label {
   font-size: 2rem;
-  width: 50%
+  width: 50%;
 }
 
-#formInputs1 label input{
+#formInputs1 label input {
   display: block;
   padding: 10px;
   border: 1px solid #555;
@@ -89,8 +89,6 @@ body {
   margin-right: calc(30% - 10px);
 }
 
-
-
 #formBtn {
   display: flex;
   justify-content: center;
@@ -99,7 +97,7 @@ body {
 }
 
 #formBtn button {
-  background-color: #6EBFFE;
+  background-color: #6ebffe;
   color: #fff;
   font-weight: bold;
   border-radius: 46px;
@@ -121,14 +119,14 @@ body {
 }
 
 #welcome-stats {
-  background-color: #EEEbE3;
+  background-color: #eeebe3;
   border: 1px solid #707070;
   border-radius: 15px;
   padding: 20px 15px;
   display: flex;
 }
 #welcome-msg {
-padding-left: 10px;
+  padding-left: 10px;
 }
 
 #stats {
@@ -142,7 +140,7 @@ padding-left: 10px;
 }
 
 #question-area {
-  background-color: #EEEbE3;
+  background-color: #eeebe3;
   border: 1px solid #707070;
   border-radius: 15px;
   padding: 15px 30px;
@@ -162,23 +160,33 @@ padding-left: 10px;
   width: 70%;
   height: 150px;
   border: 1px solid #000;
+  text-align: center;
 }
 
 #ans-buttons {
   width: 75%;
   display: grid;
-  grid-template-columns: repeat(2,49%);
+  grid-template-columns: repeat(2, 49%);
   gap: 10px;
 }
 
 #ans-buttons > button {
   padding: 10px 5px;
-  color: #fff;;
+  color: #fff;
   background-color: #1e90ff;
   border: none;
   font-size: 1.2rem;
   font-weight: bold;
-  text-shadow: 0 3px 5px rgba(0,0,0,0.7);
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+#ans-buttons > button:hover {
+  background-color: #1461ad;
+}
+
+#ans-buttons > button.selected,
+#next-q.selected {
+  background-color: rgb(10, 131, 6);
 }
 
 #next-q {
@@ -186,11 +194,15 @@ padding-left: 10px;
   margin-right: calc(100% - 87%);
   padding: 10px 40px;
   color: #fff;
-  text-shadow: 0 3px 5px rgba(0,0,0,0.7);
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
   font-size: 1.4rem;
   font-weight: bold;
   border: none;
   border-radius: 30px;
   background-color: #949595;
   margin-top: 10px;
+}
+
+#results-page {
+  display: none;
 }

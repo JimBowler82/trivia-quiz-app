@@ -1,103 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trivia Quiz</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <section id="userRegistration">
-    <h1>Trivia Quiz App</h1>
-    <div id="form">
-      <div id="formInputs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="userRegistration">
+      <h1>Trivia Quiz App</h1>
+      <div id="form">
+        <div id="formInputs">
+          <div id="formInputs1">
+            <label for="userNameInput"
+              >Username:
+              <input type="text" id="userNameInput" />
+            </label>
+          </div>
 
-        <div id="formInputs1">
+          <div id="formInputs2">
+            <label for="numberOfQuestions">Number of questions:</label>
+            <input type="number" id="numberOfQuestions" value="10" max="50" />
 
-          <label for="userNameInput">Username: 
-            <input type="text" id="userNameInput">
-          </label>
+            <label for="categorySelect"> Category:</label>
+            <select id="categorySelect">
+              <option value="any">Any Category</option>
+              <option value="9">General Knowledge</option>
+              <option value="10">Entertainment: Books</option>
+              <option value="11">Entertainment: Film</option>
+              <option value="12">Entertainment: Music</option>
+              <option value="13">Entertainment: Musicals & Theatre</option>
+              <option value="14">Entertainment: Television</option>
+              <option value="15">Entertainment: Video Games</option>
+              <option value="16">Entertainment: Board Games</option>
+              <option value="17">Science & Nature</option>
+              <option value="18">Science: Computers</option>
+              <option value="19">Science: Mathematics</option>
+              <option value="20">Mythology</option>
+              <option value="21">Sports</option>
+              <option value="22">Geography</option>
+              <option value="23">History</option>
+              <option value="24">Politics</option>
+              <option value="25">Art</option>
+              <option value="26">Celebrities</option>
+              <option value="27">Animals</option>
+              <option value="28">Vehicles</option>
+              <option value="29">Entertainment: Comics</option>
+              <option value="30">Science: Gadgets</option>
+              <option value="31">Entertainment: Japenese Anime & Manga</option>
+              <option value="32">Entertainment: Cartoon & Animations</option>
+            </select>
 
+            <label for="difficultySelect"> Difficulty:</label>
+            <select id="difficultySelect">
+              <option value="any">Any Difficulty</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
         </div>
-
-        <div id="formInputs2">
-          <label for="numberOfQuestions">Number of questions:</label>
-          <input type="number" id="numberOfQuestions" value="10" max="50">
-          
-
-          <label for="categorySelect"> Category:</label>
-          <select  id="categorySelect">
-            <option value="any">Any Category</option>
-            <option value="9">General Knowledge</option>
-            <option value="10">Entertainment: Books</option>
-            <option value="11">Entertainment: Film</option>
-            <option value="12">Entertainment: Music</option>
-            <option value="13">Entertainment: Musicals & Theatre</option>
-            <option value="14">Entertainment: Television</option>
-            <option value="15">Entertainment: Video Games</option>
-            <option value="16">Entertainment: Board Games</option>
-            <option value="17">Science & Nature</option>
-            <option value="18">Science: Computers</option>
-            <option value="19">Science: Mathematics</option>
-            <option value="20">Mythology</option>
-            <option value="21">Sports</option>
-            <option value="22">Geography</option>
-            <option value="23">History</option>
-            <option value="24">Politics</option>
-            <option value="25">Art</option>
-            <option value="26">Celebrities</option>
-            <option value="27">Animals</option>
-            <option value="28">Vehicles</option>
-            <option value="29">Entertainment: Comics</option>
-            <option value="30">Science: Gadgets</option>
-            <option value="31">Entertainment: Japenese Anime & Manga</option>
-            <option value="32">Entertainment: Cartoon & Animations</option>
-          </select>
-          
-
-          <label for="difficultySelect"> Difficulty:</label>
-          <select id="difficultySelect">
-            <option value="any">Any Difficulty</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-          
+        <div id="formBtn">
+          <button id="startBtn">Submit</button>
         </div>
+      </div>
+    </section>
 
+    <section id="question-page">
+      <div id="welcome-stats">
+        <div id="welcome-msg">
+          <h3>Welcome <span id="h3user">username</span></h3>
+        </div>
+        <div id="stats">
+          <span id="q-number"><strong>Question:</strong></span>
+          <span id="cat"><strong>Category:</strong></span>
+          <span id="diff"><strong>Difficulty:</strong></span>
+        </div>
       </div>
-      <div id="formBtn">
-        <button id="startBtn">Submit</button>
-      </div>
-    </div>
-  </section>
-  
-  <section id="question-page">
-    <div id="welcome-stats">
-      <div id="welcome-msg">
-        <h3>Welcome <span id='h3user'>username</span></h3>
-      </div>
-      <div id="stats">
-        <span id="q-number"><strong>Question:</strong></span>
-        <span id="cat"><strong>Category:</strong></span>
-        <span id="diff"><strong>Difficulty:</strong></span>
-      </div>
-    </div>
-    <div id="question-area">
-      <h3 id="questionH3"></h3>
-      <div id="question-box">
-        <p id="question-text"></p>
-      </div>
-      <div id="ans-buttons">
-        <!-- <button>Answer 1</button>
+      <div id="question-area">
+        <h3 id="questionH3"></h3>
+        <div id="question-box">
+          <p id="question-text"></p>
+        </div>
+        <div id="ans-buttons">
+          <!-- <button>Answer 1</button>
         <button>Answer 2</button>
         <button>Answer 3</button>
         <button>Answer 4</button> -->
+        </div>
+        <button id="next-q">Next</button>
       </div>
-      <button id="next-q">Next</button>
-    </div>
-  </section>
-  
-  <script src="script.js"></script>
-</body>
+    </section>
+
+    <section id="results-page">
+      <h1>Results Page</h1>
+      <div id="game-config">
+        Game Config Details Here
+        <hr />
+      </div>
+      <div id="results-area"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
 </html>
