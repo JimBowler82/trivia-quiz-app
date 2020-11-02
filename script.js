@@ -15,6 +15,7 @@ const difficultySpan = document.querySelector("#diff");
 const nextBtn = document.querySelector("#next-q");
 // Results page
 const resultsPage = document.querySelector("#results-page");
+const configArea = document.querySelector("#game-config");
 
 // GLOBAL VARIABLES
 let playerName;
@@ -116,7 +117,7 @@ function populateAnswerBoxes(arr) {
   // shuffle array contents
   for (let i = 0; i < arr.length; i++) {
     let btn = document.createElement("button");
-    btn.innerText = arr[i];
+    btn.innerHTML = arr[i];
     btn.setAttribute("data.text", arr[i]);
     btn.addEventListener("click", selectAnswer);
     const btnArea = document.querySelector("#ans-buttons");
@@ -167,6 +168,12 @@ function nextQuestion() {
     removeButtons();
     populateQuestion(questionSet);
   } else {
+    // Push final answer
+    gameArray.push({
+      question: `${qNumber}`,
+      userSelection: userAnswer,
+      correct: questionSet[qNumber].correct_answer,
+    });
     // display end of game results
     questionPage.style.display = "none";
     resultsPage.style.display = "block";
@@ -186,7 +193,20 @@ function removeButtons() {
   });
 }
 
+function showScore() {
+  let numberCorrect = 0;
+  gameArray.forEach((question) => {
+    if (question.userSelection === question.correct) {
+      numberCorrect += 1;
+    }
+  });
+  const p = document.createElement("p");
+  p.innerText = `You answered ${numberCorrect} out of ${maxQNumber} questions correctly.`;
+  return p;
+}
+
 function populateResultsArea() {
+  populateConfigArea();
   const resultsObj = gameArray;
   resultsObj.forEach((obj) => {
     const { question, userSelection, correct } = obj;
@@ -209,6 +229,18 @@ function populateResultsArea() {
     div.appendChild(ul);
     document.querySelector("#results-area").appendChild(div);
   });
+  document.querySelector("#results-page").appendChild(showScore());
+}
+
+function populateConfigArea() {
+  const h3 = document.createElement("h3");
+  h3.innerText = `Player: ${playerName}`;
+  const p = document.createElement("p");
+  p.innerText = `Category: ${questionSet[0].category}`;
+  const hr = document.createElement("hr");
+  configArea.appendChild(h3);
+  configArea.appendChild(p);
+  configArea.appendChild(hr);
 }
 
 /* 
